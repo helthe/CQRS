@@ -71,4 +71,3 @@ class MemoryCommandHandlerLocatorTest extends \PHPUnit_Framework_TestCase
         return $this->getMock('\Helthe\Component\CQRS\CommandHandler\CommandHandlerInterface');
     }
 }
- 
