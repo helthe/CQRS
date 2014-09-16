@@ -29,6 +29,29 @@ Add the following in your `composer.json`:
 $ composer require 'helthe/cqrs=dev-master'
 ```
 
+## Usage
+
+The component contains mainly helper interfaces for implementing CQRS. Some basic implementations are also included.
+
+```php
+use Helthe\Component\CQRS\Bus\SequentialCommandBus;
+use Helthe\Component\CQRS\Command\CommandInterface;
+use Helthe\Component\CQRS\CommandHandler\CommandHandlerInterface;
+use Helthe\Component\CQRS\CommandHandler\MemoryCommandHandlerLocator;
+
+/* @var CommandInterface */
+$command = new Command()
+/* @var CommandHandlerInterface */
+$handler = new CommandHandler()
+
+$locator = new MemoryCommandHandlerLocator();
+$locator->register(get_class($command), $handler);
+
+$bus = new SequentialCommandBus($locator);
+
+$bus->dispatch($command);
+```
+
 ## Bugs
 
 For bugs or feature requests, please [create an issue](https://github.com/helthe/CQRS/issues/new).
