@@ -56,7 +56,7 @@ class SequentialCommandBusTest extends \PHPUnit_Framework_TestCase
 
         $bus = new SequentialCommandBus($locator);
 
-        $reflection = new \ReflectionClass('\Helthe\Component\CQRS\Bus\SequentialCommandBus');
+        $reflection = new \ReflectionClass('Helthe\Component\CQRS\Bus\SequentialCommandBus');
         $executingProperty = $reflection->getProperty('executing');
         $executingProperty->setAccessible(true);
         $executingProperty->setValue($bus, true);
@@ -102,7 +102,7 @@ class SequentialCommandBusTest extends \PHPUnit_Framework_TestCase
 
         $bus = new SequentialCommandBus($locator);
 
-        $reflection = new \ReflectionClass('\Helthe\Component\CQRS\Bus\SequentialCommandBus');
+        $reflection = new \ReflectionClass('Helthe\Component\CQRS\Bus\SequentialCommandBus');
         $commandsProperty = $reflection->getProperty('commands');
         $commandsProperty->setAccessible(true);
         $commandsProperty->setValue($bus, array($command1));
@@ -111,7 +111,7 @@ class SequentialCommandBusTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Helthe\Component\CQRS\Exception\InvalidCommandException
+     * @expectedException Helthe\Component\CQRS\Exception\InvalidCommandException
      */
     public function testHandleAnUnsupportedCommand()
     {
@@ -143,7 +143,7 @@ class SequentialCommandBusTest extends \PHPUnit_Framework_TestCase
      */
     private function getCommandMock()
     {
-        return $this->getMock('\Helthe\Component\CQRS\Command\CommandInterface');
+        return $this->getMock('Helthe\Component\CQRS\Command\CommandInterface');
     }
 
     /**
@@ -153,7 +153,7 @@ class SequentialCommandBusTest extends \PHPUnit_Framework_TestCase
      */
     private function getCommandHandlerMock()
     {
-        return $this->getMock('\Helthe\Component\CQRS\CommandHandler\CommandHandlerInterface');
+        return $this->getMock('Helthe\Component\CQRS\CommandHandler\CommandHandlerInterface');
     }
 
     /**
@@ -163,6 +163,6 @@ class SequentialCommandBusTest extends \PHPUnit_Framework_TestCase
      */
     private function getCommandHandlerLocatorMock()
     {
-        return $this->getMock('\Helthe\Component\CQRS\CommandHandler\CommandHandlerLocatorInterface');
+        return $this->getMock('Helthe\Component\CQRS\CommandHandler\CommandHandlerLocatorInterface');
     }
 }

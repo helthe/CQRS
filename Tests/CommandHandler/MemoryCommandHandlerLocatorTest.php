@@ -27,7 +27,7 @@ class MemoryCommandHandlerLocatorTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Helthe\Component\CQRS\Exception\CommandHandlerNotFoundException
+     * @expectedException Helthe\Component\CQRS\Exception\CommandHandlerNotFoundException
      */
     public function testLocateNonexistentCommandHandler()
     {
@@ -44,7 +44,7 @@ class MemoryCommandHandlerLocatorTest extends \PHPUnit_Framework_TestCase
 
         $locator->register('foo', $handler);
 
-        $reflection = new \ReflectionClass('\Helthe\Component\CQRS\CommandHandler\MemoryCommandHandlerLocator');
+        $reflection = new \ReflectionClass('Helthe\Component\CQRS\CommandHandler\MemoryCommandHandlerLocator');
         $handlersProperty = $reflection->getProperty('handlers');
         $handlersProperty->setAccessible(true);
 
@@ -58,7 +58,7 @@ class MemoryCommandHandlerLocatorTest extends \PHPUnit_Framework_TestCase
      */
     private function getCommandMock()
     {
-        return $this->getMock('\Helthe\Component\CQRS\Command\CommandInterface');
+        return $this->getMock('Helthe\Component\CQRS\Command\CommandInterface');
     }
 
     /**
@@ -68,6 +68,6 @@ class MemoryCommandHandlerLocatorTest extends \PHPUnit_Framework_TestCase
      */
     private function getCommandHandlerMock()
     {
-        return $this->getMock('\Helthe\Component\CQRS\CommandHandler\CommandHandlerInterface');
+        return $this->getMock('Helthe\Component\CQRS\CommandHandler\CommandHandlerInterface');
     }
 }
