@@ -12,10 +12,10 @@
 namespace Helthe\Component\CQRS\Exception;
 
 /**
- * Exception thrown by a command handler when a command is invalid.
+ * Exception thrown when a given command is invalid.
  *
  * @author Carl Alexander <carlalexander@helthe.co>
  */
-class InvalidCommandException extends \RuntimeException implements ExceptionInterface
+class InvalidCommandException extends \InvalidArgumentException implements ExceptionInterface
 {
 }
