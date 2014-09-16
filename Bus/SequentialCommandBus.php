@@ -56,7 +56,7 @@ class SequentialCommandBus implements CommandBusInterface
     /**
      * {@inheritdoc}
      */
-    public function handle(CommandInterface $command)
+    public function dispatch(CommandInterface $command)
     {
         $this->commands[] = $command;
 

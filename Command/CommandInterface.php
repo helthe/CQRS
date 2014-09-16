@@ -14,6 +14,8 @@ namespace Helthe\Component\CQRS\Command;
 /**
  * Interface for commands.
  *
+ * A command should be a simple DTO so the interface is meant to act as an identifier.
+ *
  * @author Carl Alexander <carlalexander@helthe.co>
  */
 interface CommandInterface

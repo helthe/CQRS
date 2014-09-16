@@ -36,7 +36,7 @@ class SequentialCommandBusTest extends \PHPUnit_Framework_TestCase
 
         $bus = new SequentialCommandBus($locator);
 
-        $bus->handle($command);
+        $bus->dispatch($command);
     }
 
     public function testHandleAppendsCommandWhileExecuting()
@@ -65,7 +65,7 @@ class SequentialCommandBusTest extends \PHPUnit_Framework_TestCase
         $commandsProperty->setAccessible(true);
         $commandsProperty->setValue($bus, array($command1));
 
-        $bus->handle($command2);
+        $bus->dispatch($command2);
         $this->assertSame(array($command1, $command2), $commandsProperty->getValue($bus));
     }
 
@@ -107,7 +107,7 @@ class SequentialCommandBusTest extends \PHPUnit_Framework_TestCase
         $commandsProperty->setAccessible(true);
         $commandsProperty->setValue($bus, array($command1));
 
-        $bus->handle($command2);
+        $bus->dispatch($command2);
     }
 
     /**
@@ -133,7 +133,7 @@ class SequentialCommandBusTest extends \PHPUnit_Framework_TestCase
 
         $bus = new SequentialCommandBus($locator);
 
-        $bus->handle($command);
+        $bus->dispatch($command);
     }
 
     /**

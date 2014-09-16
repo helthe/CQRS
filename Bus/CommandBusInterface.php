@@ -16,17 +16,17 @@ use Helthe\Component\CQRS\Command\CommandInterface;
 /**
  * Interface for the command bus.
  *
- * A command bus handles a command by matching the command to its handler. The matching handler receives the given
- * command for processing.
+ * A command bus handles the dispatch of a command by matching the command to its handler. The matching handler
+ * receives the dispatched command and executes it.
  *
  * @author Carl Alexander <carlalexander@helthe.co>
  */
 interface CommandBusInterface
 {
     /**
-     *
+     * Dispatch a command to its handler.
      *
      * @param CommandInterface $command
      */
-    public function handle(CommandInterface $command);
+    public function dispatch(CommandInterface $command);
 }
